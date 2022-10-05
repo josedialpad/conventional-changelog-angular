@@ -59,6 +59,13 @@ function getWriterOpts () {
 
       if (commit.scope === '*') {
         commit.scope = ''
+      } else if (commit.scope) {
+        // kebab-case to Title Case
+        commit.scope = commit.scope
+          .split(/-| /)
+          .filter(x => x.length > 0)
+          .map((x) => (x.charAt(0).toUpperCase() + x.slice(1)))
+          .join(' ');
       }
 
       if (typeof commit.hash === 'string') {
