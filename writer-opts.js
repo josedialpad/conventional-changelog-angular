@@ -43,12 +43,12 @@ function getWriterOpts () {
         commit.type = 'Reverts'
       } else if (commit.type === 'docs') {
         commit.type = 'Documentation'
+      } else if (commit.type === 'refactor') {
+        commit.type = 'Code Refactoring'
       } else if (discard) {
         return
       } else if (commit.type === 'style') {
         commit.type = 'Styles'
-      } else if (commit.type === 'refactor') {
-        commit.type = 'Code Refactoring'
       } else if (commit.type === 'test') {
         commit.type = 'Tests'
       } else if (commit.type === 'build') {
